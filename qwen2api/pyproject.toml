@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "qwen2openai"
+version = "0.1.0"
+description = "OpenAI-compatible proxy for Qwen Studio (chat.qwen.ai)"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "qwen2openai"},
+]
+keywords = ["qwen", "openai", "proxy", "api", "ai"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "httpx>=0.28.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.6.0",
+    "sse-starlette>=2.2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/qwen2openai"
+Issues = "https://github.com/YOUR_USERNAME/qwen2openai/issues"
+
+[project.scripts]
+qwen2openai = "qwen2openai.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["qwen2openai"]
